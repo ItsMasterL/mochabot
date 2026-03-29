@@ -16,7 +16,7 @@ namespace mochabot.Services
         {
             _discord.Log += message => LogUtil.LogAsync(_logger, message);
 
-            await _discord.LoginAsync(TokenType.Bot, _config["Token"]);
+            await _discord.LoginAsync(TokenType.Bot, _config["MOCHABOT_TOKEN"]);
             await _discord.StartAsync();
         }
 

@@ -14,10 +14,6 @@ class Program
     public static async Task Main(string[] args)
     {
         using IHost host = Host.CreateDefaultBuilder(args)
-            .ConfigureAppConfiguration(config =>
-            {
-                config.AddUserSecrets<Program>();
-            })
             .ConfigureServices(services =>
             {
                 services.AddSingleton(new DiscordSocketConfig() { GatewayIntents = GatewayIntents.AllUnprivileged | GatewayIntents.MessageContent });
